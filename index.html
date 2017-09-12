@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urban Yoga</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/chart.css">
+    <script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            $(".aa1").click(function () {
+                $(".dd1").toggle();
+            });
+            $(".aa2").click(function () {
+                $(".dd2").toggle();
+            });
+            $(".aa3").click(function () {
+                $(".dd3").toggle();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="main">
+        <!--Header-->
+        <div class="header">
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                                class="icon-bar"></span><span class="icon-bar"></span>
+                        </button>
+                        <a href="javascript:void(0);" class="logo">
+                            <img src="images/logo.png" /></a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Dashboard <b class="caret"></b></a>
+                                <ul class="dropdown-menu multi-level">
+                                    <li><a href="index.html">Dashboard</a></li>
+                                    <li><a href="javascript:void(0);">Business Overview</a></li>
+                                    <li><a href="javascript:void(0);">Schedule</a></li>
+                                    <li><a href="javascript:void(0);">Reports</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="javascript:void(0);">Sign In</a></li>
+                            <li><a href="javascript:void(0);">Classes</a></li>
+                            <li><a href="javascript:void(0);">Workshops</a></li>
+                            <li><a href="javascript:void(0);">Appointments</a></li>
+                            <li><a href="javascript:void(0);">Client Home</a></li>
+                            <li><a href="javascript:void(0);">Retail</a></li>
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+                <!--/.container-fluid -->
+            </div>
+        </div>
+        <!--content-->
+        <div class="content">
+            <div class="container">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="col-md-1 col-lg-1 col-sm-12 col-xs-12">
+                        <a href="javascript:void(0);">
+                            <img src="images/add.png" /><br />
+                            <span style="text-align: none; color: #000; font-size: 9px;">New Program</span>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12 box" id="1">
+                        &nbsp; <b class="name"></b>
+                        <br />
+                        <i class="sbm">Sales by month</i>
+                        <div class="BarchaRT">
+                        </div>
+                        <div class="tms">
+                        </div>
+                        <div class="more">
+                            <a href="javascript:void(0);" class="aa1">More</a></div>
+                        <div class="display-resources dd1">
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12 box" id="2">
+                        &nbsp; <b class="name"></b>
+                        <br />
+                        <i class="sbm">Sales by month</i>
+                        <div class="BarchaRT">
+                        </div>
+                        <div class="tms">
+                        </div>
+                        <div class="more">
+                            <a href="javascript:void(0);" class="aa2">More</a></div>
+                        <div class="display-resources dd2">
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12 box" id="3">
+                        &nbsp; <b class="name"></b>
+                        <br />
+                        <i class="sbm">Sales by month</i>
+                        <div class="BarchaRT">
+                        </div>
+                        <div class="tms">
+                        </div>
+                        <div class="more">
+                            <a href="javascript:void(0);" class="aa3">More</a></div>
+                        <div class="display-resources dd3">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 mar_t15px">
+                    <div class="col-md-1 col-lg-1 col-sm-12 col-xs-12">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12 table-responsive">
+                        <div id="extra-resources">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer-->
+        <div class="footer">
+            <div class="bottomfooter">
+                <div class="container">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 tc">
+                        <a href="javascript:void(0);" target="_blank">&copy; Urban Yoga</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.chart.js" type="text/javascript"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            var axvResult;
+            $.ajax({
+                type: "GET",
+                url: "https://api.myjson.com/bins/47axv",
+                async: false,
+                success: function (result) {
+                    axvResult = result;
+                }
+            });
+
+            //alert(axvResult[0].ProgramID);
+
+            $.ajax({
+                type: "GET",
+                url: "https://api.myjson.com/bins/5bdb3",
+                async: false,
+                success: function (result) {
+                    var name = '';
+                    var tms = '';
+                    var no = 1;
+                    console.log(result);
+
+
+
+
+                    var extra_output = "<table class='table table-condensed table-hover'><thead><tr><th>All Programes</th><th>Monthly Sales</th><th>Monthly Attendance</th></thead><tbody>";
+                    for (var i in result) {
+
+                        if (no < 4) {
+                            name = result[i].Name;
+
+
+                            var output = "<table><thead><tr><th>Price Name</th><th>Current</th></thead><tbody>";
+                            for (var oii = 0; oii < axvResult.length; oii++) {
+                                //console.log(axvResult[oii].ProgramID + ".." + result[i].ProgramID);
+                                //console.log(parseInt(axvResult[oii].ProgramID) == parseInt(result[i].ProgramID));
+                                if (parseInt(axvResult[oii].ProgramID) == parseInt(result[i].ProgramID)) {
+                                    //  console.log('in..>' + oii);
+                                    output += "<tr><td>" + axvResult[oii].Name + "</td><td>" + axvResult[oii].Sales + "</td></tr>";
+                                }
+                            }
+                            output += "</tbody></table>";
+
+                            $('#' + no + ' .name').html(name);
+
+                            var chaRT = '<div class="chart"><ul class="bar-chart" data-bars="';
+                            var PreviousYearArr = result[i].Sales.PreviousYear.toString().split(',');
+                            var CurrentYearArr = result[i].Sales.CurrentYear.toString().split(',');
+                            var barA = '';
+                            for (var oi = 0; oi < PreviousYearArr.length; oi++) {
+                                barA += '[' + PreviousYearArr[oi] + ',' + CurrentYearArr[oi] + '],';
+                            }
+                            barA = barA.substring(0, barA.length - 1);
+                            //
+                            chaRT += barA + '"    ></ul></div> ';
+                            //alert(chaRT);
+                            $('#' + no + ' .BarchaRT').html(chaRT);
+
+                            tms = '<div class="col-md-6 gtext">Total Month<br /> Salery </div> <div class="col-md-6 gtext">Current <br /><b style="font-size:18px;">$' + result[i].TotalMonthlySales + '</b></div>';
+
+                            $('#' + no + ' .tms').html(tms);
+                            $('#' + no + ' .display-resources').html(output);
+                        } else {
+                            extra_output += "<tr><td>" + result[i].Name + "</td><td>" + result[i].TotalMonthlySales + "</td><td>" + result[i].MonthlyAttendance + "</td></tr>";
+
+
+                        }
+                        // var displayResources = $('.display-resources');
+                        //   displayResources.text('Loading data from JSON source...');
+
+
+                        //                            if (no == 3) {
+                        //                                break;
+                        //                            }
+                        no++;
+                    }
+                    extra_output += "</tbody></table>";
+
+                    $('#extra-resources').html(extra_output);
+                    $("table").addClass("table");
+                    $('.bar-chart').cssCharts({ type: "bar" });
+                    $('.bar-chart > ul > li > span').attr("title", "");
+                    $('.grid > hr').attr("data-y", "");
+                }
+            });
+
+            // $('#retrieve-resources').click(function () {  });
+
+
+
+
+        });
+
+    </script>
+</body>
+</html>
